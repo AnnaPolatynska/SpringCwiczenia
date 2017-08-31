@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<body>
+<p>Strona Bezpieczna</p>
+
+<a href="/supersecured">go to supersecured</a>
+
+<p>wylogowywanie </p>
+	<form th:action="@{/logout}" method= "post">
+		<input type= "submit" value= "logout"/>
+	</form>
+</body>
+
+</html>

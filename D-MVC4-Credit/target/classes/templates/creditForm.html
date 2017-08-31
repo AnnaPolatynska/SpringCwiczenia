@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<h1> Przelicz swoj kredyt </h1>
+	<form th:action="@{/result}" method="post" th:object="${credit}">
+		<p> Kwota kredytu </p>
+		<input type="text" th:field="*{kwota_kredyt}"/><br/>
+		<p> Liczba rat </p>
+		<input type="text" th:field="*{l_rat}"/>
+		<input type="submit" value="przelicz"/>
+	</form>
+</body>
+</html>
