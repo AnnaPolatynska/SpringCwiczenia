@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="D-MVC6-Validacion"/>
+<aop-project name="D-MOJE2-WAR"/>
+<aop-project name="S1-WAR"/>
+<aop-project name="D-MVC5-Data"/>
+<aop-project name="D-MVC4-Credit"/>
+<aop-project name="D-MVC-JAR"/>
+<aop-project name="D-MVC7-Security"/>
+<aop-project name="D-MVC2-JAR"/>
+<aop-project name="D-MOJE"/>
+<aop-project name="D-MOJE-JAR2"/>
+<aop-project name="D-MOJE3-Thymeleaf"/>
+</aop-reference-model>

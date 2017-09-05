@@ -1,0 +1,57 @@
+package pl.reaktor;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import pl.reaktor.model.Car;
+import pl.reaktor.repository.CarRepo;
+
+@SpringBootApplication
+public class DMvc4DataApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext ctx 
+		= SpringApplication.run(DMvc4DataApplication.class, args);
+	
+		List<Car> cars = new ArrayList<>();
+		cars.add(new Car("A6","Audi",200000.0));
+		cars.add(new Car("Auris", "Toyota", 120000.0));
+		cars.add(new Car("Panda", "Fiat", 30000.0));
+		cars.add(new Car("tipo", "Fiat", 12000.0));
+		cars.add(new Car("Uno", "Fiat", 30000.0));
+		
+		CarRepo cr = ctx.getBean(CarRepo.class);
+		//zapis do bazy danych
+		cars.forEach(cr::save);
+		
+		// findOne odnajduje a cr.delete(selectedCar); delete car o id=1
+		Car selectedCar = cr.findOne(1L);
+		cr.delete(selectedCar);
+		
+		cr.findAll().forEach(System.out::println);
+		cr.count();// zlicza ile jest rekordów w tabeli
+		
+		//metoda udostępniona przez car repo
+		// ! użyj :: // ::save //System.out::println
+		// cr.findByBrand("Fiat").forEach(System.out::println); // podaje adres
+		
+		// musimy dodać metodę to strinfga w car toString
+		List<Car> list1 = cr.findByBrand("Fiat");
+		System.out.println(list1);
+		
+		// w interface car repo findByName + findByPrice + findByBrand
+		
+		List<Car> list2 = cr.findByBrand("Fiat");
+		
+		List<Car> list3 = cr.findByName("Tipo");
+		System.out.println(list1);
+		List<Car> list4 = cr.findByBrandAndPrice("Toyota", 120000.0);
+		System.out.println(list1);
+		
+		ctx.close();
+	}
+}

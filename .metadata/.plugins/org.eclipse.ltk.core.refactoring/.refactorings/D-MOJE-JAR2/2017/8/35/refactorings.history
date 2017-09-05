@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;D-MVC-JAR2/src/main/resources/static/css.css&apos; to &apos;style.css&apos;" description="Rename resource &apos;css.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/static/css.css" name="style.css" stamp="1503925103501" updateReferences="true"/>
+</session>

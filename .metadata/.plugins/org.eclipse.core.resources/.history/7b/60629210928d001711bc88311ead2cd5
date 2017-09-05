@@ -1,0 +1,30 @@
+package pl.reaktor.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.ui.Model;
+
+import pl.reaktor.model.Person;
+
+import javax.validation.Valid;
+
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+
+
+
+
+public class MainController {
+
+	@RequestMapping("/")
+	public String home(){
+	// atrybuty dot person pochodzące z widoku	
+	model.addAttribute("person", new Person());
+		return "home";
+	}
+	//formularz metodą post do home po kliknię ciu ma sprawdzić czy dane są prawidłowe 
+	@PostMapping("/")
+	public String validForm(@ Valid @ModelAttribute Person person, BindingResult result){
+		return "home";
+	}
+	
+}

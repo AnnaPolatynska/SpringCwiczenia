@@ -1,0 +1,3 @@
+security.user.name = user2
+security.user.password = pass2
+security.user.role = USER

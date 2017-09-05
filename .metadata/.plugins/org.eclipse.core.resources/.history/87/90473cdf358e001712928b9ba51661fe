@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+
+        <form action="/secured" method="get">
+			<p> Insert login </p>
+			<input type="text" name="username" placeholder="input name"/> <br/>
+			<p> Insert password </p>
+			<input type="password" name="password" placeholder="input password"/> <br/>
+			<input type="submit" value="login"/>
+		</form>
+      
+	</body>
+</html>

@@ -1,0 +1,28 @@
+package pl.reaktor.security;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+//nazwa klasy musi być dokłanie SecurityConfig
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+//chcę przeciążyć swoją konfiguracją
+	//gdy / niechronione i wymaga logowania by przejśc do /secured
+	
+	@Override
+	protected void configure(HttpSecurity http) throws Exception{
+		
+	}
+	
+	@RequestMapping("/secured")
+		public String secured(){
+			return"secured";
+		}
+	
+	
+	
+}

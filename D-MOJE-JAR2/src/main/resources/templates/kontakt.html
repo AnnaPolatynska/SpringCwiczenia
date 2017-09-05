@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<link rel= "stylesheet" type ="text/css" href="style.css"/>// podpięcie css
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+<script type ="text/javascript"></script>
+</head>
+
+<body>
+<h1>To jest strona kontaktu </h1>
+
+<a href="javascript:alert('chcesz przejść na about?');"> about </a><br/>
+
+<a href="/about"> link do strony o mnie </a><br/>
+<a href="/#"> link do kontaktu </a><br/>
+<a href="/blog"> link do bloga </a><br/>
+<p>==========================================</p>
+
+<form th:action="@{/success}" method="post">
+<p>Podaj imie</p>
+<input type="text" th:field="${c.first}"/><br/>
+<p>Podaj nazwisko</p>
+<input type="text" th:field="${c.last}"/><br/>
+<p>Podaj email</p>
+<input type="email" th:field="${c.email}"/><br/>
+<input type="submit" value="send"/>
+</form>
+
+
+</body>
+</html>

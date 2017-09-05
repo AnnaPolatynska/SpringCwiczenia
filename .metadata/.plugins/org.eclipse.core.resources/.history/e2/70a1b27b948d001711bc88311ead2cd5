@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+   <h1>Person validation</h1>
+    
+     <form th:action="@{/}" method="post" th:object="${person}">
+			
+		<p> name </p>
+		<input type="submit" th:field="*{firstName}" />
+		<p class="error" th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">first name error</p>
+			
+		<p> Insert Last </p>
+		<input type="submit" th:field="*{lastName}" />
+		<p class="error" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">last name error</p>
+			
+		<p> Insert email </p>
+		<input type="email" th:field="*{email}" /> 
+		<p class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email error</p>
+		<p> Age </p>
+		<input type="number" th:field="*{age}"/> 
+		<p class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">age error</p>
+		<input type="submit" value="valid"/>
+	</form>
+
+</body>
+</html>

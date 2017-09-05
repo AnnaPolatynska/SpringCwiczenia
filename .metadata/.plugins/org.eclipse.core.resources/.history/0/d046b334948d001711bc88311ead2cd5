@@ -1,0 +1,40 @@
+package pl.reaktor.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import pl.reaktor.model.Person;
+
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.*;
+
+
+
+@Controller
+public class MainController {
+
+	@RequestMapping("/")
+	public String home(Model model){
+	// atrybuty dot person pochodzące z widoku	
+	model.addAttribute("person", new Person());
+		return "home";
+	}
+	//formularz metodą post do home po kliknię ciu ma sprawdzić czy dane są prawidłowe 
+	@PostMapping("/")
+	public String validForm(@ Valid @ModelAttribute Person person, BindingResult result){
+		if(result.hasErrors()){
+			//wszystkie błędy zapisze do listy errors przechwycone na widoku
+			List<ObjectError> errors = result.getAllErrors();
+			//na obiekcie errors difoltowa wiadomośc o spełnieniu warunków
+			errors.forEach(err -> System.out.println(err.getDefaultMessage()));
+		}
+		
+		return "home";
+	}
+	
+}

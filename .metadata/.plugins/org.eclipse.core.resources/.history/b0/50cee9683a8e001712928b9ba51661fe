@@ -1,0 +1,15 @@
+<html>
+<body>
+<p>Strona SUPER Bezpieczna</p>
+
+<p>wylogowywanie </p>
+	<form th:action="@{/}">
+		<input type= "submit" value= "logout"/>
+	</form>
+
+
+
+<img src ="stTh.PNG" />
+</body>
+
+</html>

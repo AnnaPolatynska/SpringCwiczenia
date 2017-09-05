@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<body>
+
+<p>Podaj dane do wyliczenia kredytu</p>
+<form th:action="@{/kredyt}" method="text" th:object="${kredyt}">
+	
+	
+	<p>Kwota kredytu</p>
+		<input type="double" th:field="*{kwota}"/><br/>
+	<p>czas sp³aty</p>
+		<input type="date" th:field ="*{date}"/><br/>
+	
+	
+	
+	<p>oprocentowanie</p>
+		
+	<p>miesiêczna rata</p>
+		<p input type="double" th:field="*{kwota}"/><br/>
+	<p>ca³kowita kwota do sp³acenia</p>
+		
+		
+		
+</form> 
+
+</body>
+</html>

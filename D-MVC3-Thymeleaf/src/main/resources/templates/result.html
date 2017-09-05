@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<body>
+<h1>Result: </h1>
+<p>login</p>
+<div th:switch="${reg.login}">
+	<p th:case="login123" th:text="login123"></p>
+	<p th:case="*" th:text="Niezgodny"></p>
+</div>
+
+<p th:text="${reg.login}"></p>
+<p>pass</p>
+<p th:text="${reg.pass}"></p>
+<p>data</p>
+<p th:text="${reg.date}"></p>
+<p>email</p>
+<p th:text="${reg.email}"></p>
+
+<p th:if="${reg.cb1 || reg.cb2 || reg.cb3}" th:text="Programing+': '">Programing</p>
+
+<p th:if="${reg.cb1}" th:text="Java"></p>
+<p th:if="${reg.cb2}" th:text="Python"></p>
+<p th:if="${reg.cb3}" th:text="Other"></p>
+
+
+
+<p>English</p>
+<p th:if="${reg.radio}" th:text="English"></p>
+
+<p th:text="${reg.radio}"></p>
+
+
+
+
+
+<p th:text="${reg.login}+' '+${reg.pass}"></p>
+
+
+
+</body>
+</html>

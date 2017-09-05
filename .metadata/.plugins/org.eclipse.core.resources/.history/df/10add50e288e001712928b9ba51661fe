@@ -1,0 +1,17 @@
+package pl.reaktor.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+//Using default security password: 67b90d2d-1fff-4820-8fc5-84e0ac548c75 z defoltu hasło dla user
+//daje dostęp do np obrazka
+@Controller
+public class HomeController {
+	@RequestMapping("/")
+	public String home(){
+		return"home";
+	
+	}
+	
+}

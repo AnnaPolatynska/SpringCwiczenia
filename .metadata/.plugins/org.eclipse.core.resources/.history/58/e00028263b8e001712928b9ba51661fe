@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<body>
+<p>Strona SUPER Bezpieczna</p>
+
+<p>wylogowywanie </p>
+	<<form th:action="@{/logout}" method= "post">
+		<input type= "submit" value= "logout"/>
+	</form>
+
+
+
+<img src ="stTh.PNG" />
+</body>
+
+</html>

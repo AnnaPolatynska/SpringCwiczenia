@@ -1,0 +1,13 @@
+<html>
+<body>
+<p>Strona Bezpieczna</p>
+
+<a href="/supersecured">go to supersecured</a>
+
+<p>wylogowywanie </p>
+	<form th:action="@{/}">
+		<input type= "submit" value= "logout"/>
+	</form>
+</body>
+
+</html>

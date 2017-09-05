@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<link rel= "stylesheet" type ="text/css" href="style.css"/>
+</head>
+
+<body>
+<h1>To jest mój blog</h1>
+
+
+<a href="/about"> link do strony o mnie </a><br/>
+<a href="/kontakt"> link do kontaktu </a><br/>
+<a href="/#"> link do bloga </a><br/>
+//th: zwi¹zany z http://www.thymeleaf.org
+
+
+<p>Dodaj post</p>
+<form th:action="@{/add}" method="post">
+	<p>tytu³</p>
+		<input type="text" th:field="${post.title.ToUpperCase()}"/><br/>
+	<p>zawartoœæ</p>
+		<textarea th:field="${post.content}"></textarea>
+	<p>Podpis</p>
+		<input type="text" th:field="${post.sign}"/><br/>
+		<input type="submit" value="send"/><br/>
+	
+
+</form> 
+
+</body>
+</html>

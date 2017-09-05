@@ -1,0 +1,20 @@
+package pl.reaktor.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.ui.Model;
+import org.springframework.*;
+
+
+
+
+public class MainController {
+
+	@RequestMapping("/")
+	public String home(){
+	// atrybuty dot person pochodzące z widoku	
+	model.addAttribute("person", new Person());
+		return "home";
+	}
+	
+	
+}

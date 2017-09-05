@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+	<head></head>
+	<body>
+
+        <form action="/processLogin" th:action="@{processLogin}" method="post">
+			<p> Insert login </p>
+			<input type="text" name="name" placeholder="input name"/> <br/>
+			<p> Insert password </p>
+			<input type="password" name="password" placeholder="input password"/> <br/>
+			<input type="submit" value="login"/>
+		</form>
+      
+	</body>
+</html>
